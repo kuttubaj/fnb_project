@@ -5151,19 +5151,21 @@ body {
 }
 
 .node-5-3171 {
-  /* Убираем жесткую ширину, чтобы текст не обрезался */
-  width: auto !important; 
-  position: relative !important;
-  left: auto !important;
-  top: auto !important;
-  
+  left: 829.5px;
+  top: 8751.5px;
+  width: 239px;
+  height: 34px;
+  z-index: 682;
+  opacity: 1;
   font-family: "Gilroy", system-ui, sans-serif;
   font-size: 28px;
   font-weight: 700;
-  line-height: normal;
+  line-height: 33.852px;
+  letter-spacing: 0px;
   color: rgb(255, 255, 255);
   text-align: center;
-  white-space: nowrap !important; /* Запрещаем перенос на вторую строку */
+  white-space: pre-wrap;
+  overflow: hidden;
 }
 
 .node-5-2441 {
@@ -10349,47 +10351,3 @@ body {
   text-transform: none !important; /* Убираем капс, если он включился */
 }
 
-/* ЯДЕРНЫЙ ФИКС ДЛЯ КНОПОК "СМОТРЕТЬ КАТАЛОГ" */
-
-/* 1. Настройка самих контейнеров кнопок */
-.node-5-3166, .node-5-3169, .node-5-3151 {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 450px !important; /* Делаем широкими */
-    height: 91px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    overflow: visible !important;
-    z-index: 999 !important; /* Поднимаем саму кнопку выше всего */
-}
-
-/* 2. Настройка текста внутри */
-.node-5-3168, .node-5-3171, .node-5-3154 {
-    /* Сбрасываем всё подчистую */
-    position: relative !important;
-    left: 0 !important;
-    top: 0 !important;
-    transform: none !important;
-    
-    /* Делаем блок видимым */
-    display: inline-block !important;
-    width: auto !important;
-    height: auto !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    
-    /* Оформление текста */
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important; /* Для градиентных косяков */
-    font-size: 28px !important;
-    font-weight: 800 !important;
-    font-family: 'Inter Tight', 'Gilroy', sans-serif !important;
-    white-space: nowrap !important; /* Текст в одну строку */
-    
-    /* Убираем все ограничения плагина */
-    max-width: none !important;
-    max-height: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
