@@ -3699,21 +3699,21 @@ body {
 }
 
 .node-5-3168 {
-  left: 838.5px;
-  top: 7071.5px;
-  width: 239px;
-  height: 34px;
-  z-index: 680;
-  opacity: 1;
-  font-family: "Gilroy", system-ui, sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 33.852px;
-  letter-spacing: 0px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  white-space: pre-wrap;
-  overflow: hidden;
+  left: 678px !important; /* Ставим ровно по левому краю кнопки */
+  top: 7071.5px !important; /* ВОЗВРАЩАЕМ ВЫСОТУ НА МЕСТО */
+  width: 560px !important; /* Растягиваем на всю ширину кнопки */
+  height: 34px !important;
+  z-index: 680 !important;
+  opacity: 1 !important;
+  font-family: "Gilroy", system-ui, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 33.852px !important;
+  color: rgb(255, 255, 255) !important; /* Возвращаем белый цвет */
+  text-align: center !important;
+  white-space: nowrap !important; /* Чтобы текст не ломался */
+  overflow: visible !important; /* Чтобы текст не обрезался */
+  position: absolute !important;
 }
 
 .node-5-2278 {
@@ -5151,23 +5151,22 @@ body {
 }
 
 .node-5-3171 {
-  left: 829.5px;
-  top: 8751.5px;
-  width: 239px;
-  height: 34px;
-  z-index: 682;
-  opacity: 1;
-  font-family: "Gilroy", system-ui, sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 33.852px;
-  letter-spacing: 0px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  white-space: pre-wrap;
-  overflow: hidden;
+  left: 669px !important; /* Ставим ровно по левому краю кнопки */
+  top: 8751.5px !important; /* ВОЗВРАЩАЕМ ВЫСОТУ НА МЕСТО */
+  width: 560px !important; /* Растягиваем на всю ширину кнопки */
+  height: 34px !important;
+  z-index: 682 !important;
+  opacity: 1 !important;
+  font-family: "Gilroy", system-ui, sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  line-height: 33.852px !important;
+  color: rgb(255, 255, 255) !important; /* Возвращаем белый цвет */
+  text-align: center !important;
+  white-space: nowrap !important; 
+  overflow: visible !important;
+  position: absolute !important;
 }
-
 .node-5-2441 {
   left: 100px;
   top: 9062px;
@@ -5376,24 +5375,21 @@ body {
 }
 
 .node-5-1676 {
+  /* Твои оригинальные left, top, width, height, background, z-index */
+  position: absolute; /* Убедись, что position есть */
   left: 0px;
   top: 9992px;
   width: 1920px;
   height: 10771px;
   z-index: 17;
-  opacity: 1;
   background: rgb(255, 255, 255);
   
-  /* --- ИСПРАВЛЕНИЕ СКРУГЛЕНИЯ --- */
-  /* Убираем старый clip-path полностью */
+  /* Убираем clip-path !!! */
   clip-path: none !important; 
-  
-  /* Делаем большие скругления только сверху */
-  border-top-left-radius: 126px;
-  border-top-right-radius: 126px;
-  
-  /* Если на макете вырез идет "вовнутрь", то нам нужно 
-     просто убедиться, что синий блок над ним имеет такой же радиус. */
+
+  /* Оставляем просто скругление углов */
+  border-radius: 126px 126px 0 0 !important;
+  overflow: visible !important; /* Убедимся, что логотипы не режутся по краям */
 }
 
 .node-5-2475 {
@@ -10351,3 +10347,268 @@ body {
   text-transform: none !important; /* Убираем капс, если он включился */
 }
 
+/* --- ФИКС ТЕКСТА "Соответствуют стандартам" --- */
+.node-5-2383 {
+    width: 285px !important; /* Чуть расширяем блок текста */
+    height: auto !important; /* Разрешаем тексту занимать столько высоты, сколько нужно */
+    overflow: visible !important; /* Отключаем "ножницы" */
+    white-space: normal !important; /* Разрешаем адекватный перенос слов */
+}
+
+/* --- ФИКС ОБРЕЗАННЫХ ЦИФР (01, 02, 03) --- */
+.node-5-2451, .node-5-2461, .node-5-2470 {
+    height: auto !important; /* Разрешаем блоку быть выше 65px */
+    overflow: visible !important; /* Убираем невидимые ножницы */
+    line-height: 1 !important; /* Ставим нормальный межстрочный интервал */
+}
+
+/* --- ФИКС ПРОПАВШИХ ИКОНОК (синие квадраты) --- */
+.node-5-2446, .node-5-2454, .node-5-2463 {
+    background: rgb(15, 106, 255) !important; /* Возвращаем синий фон */
+    border-radius: 20px !important; /* Скругляем углы, как на макете */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+
+/* --- ЦЕНТРИРОВАНИЕ ТЕКСТА В 3 КАРТОЧКАХ ПОСТАВКИ --- */
+
+/* Карточка 1 */
+.node-5-2485, .node-5-2486 {
+    left: 120px !important; /* Левый край как у первой белой карточки */
+    width: 504px !important; /* Ширина как у белой карточки */
+    text-align: center !important; /* Жестко по центру */
+}
+
+/* Карточка 2 */
+.node-5-2482, .node-5-2483 {
+    left: 708px !important; /* Левый край как у второй белой карточки */
+    width: 504px !important; 
+    text-align: center !important;
+}
+
+/* Карточка 3 */
+.node-5-2478, .node-5-2479 {
+    left: 1296px !important; /* Левый край как у третьей белой карточки */
+    width: 504px !important; 
+    text-align: center !important;
+}
+
+/* --- ФИКС ТЕКСТОВ "ОДИН ПРОИЗВОДИТЕЛЬ..." --- */
+.node-5-2490, .node-5-2491 {
+    height: auto !important; /* Разрешаем тексту расти вниз */
+    overflow: visible !important; /* Отменяем обрезку */
+    white-space: normal !important; /* Включаем нормальный перенос строк */
+    max-width: 750px !important; /* Чтобы текст не наезжал на фото мастера */
+}
+
+/* --- ФИКС ТЕКСТОВ В 4 СВЕТЛЫХ КАРТОЧКАХ --- */
+.node-5-2500, .node-5-2508, .node-5-2516, .node-5-2524 {
+    height: auto !important; 
+    overflow: visible !important;
+    white-space: normal !important;
+}
+
+/* --- ФИКС ФОТО МАСТЕРА (чтобы синий блок его не перекрывал) --- */
+.node-5-2525 {
+    height: 870px !important; /* Уменьшаем высоту фото, чтобы появился отступ до синего блока */
+    background-position: top center !important; /* Выравниваем фото по верхнему краю */
+}
+
+/* --- ФИКС БОЛЬШОГО ТЕКСТА "С 2013 ГОДА..." --- */
+.node-5-2540 {
+    width: 800px !important; /* Сужаем ширину блока, чтобы текст не лез на флаг */
+    height: auto !important;
+    overflow: visible !important;
+    white-space: normal !important; /* Текст сам перенесется на 4 красивые строки */
+    line-height: 1.1 !important; /* Слегка уплотняем строки, чтобы смотрелось монолитно */
+}
+
+/* --- ФИКС ФЛАГА (чтобы не торчал справа) --- */
+.node-5-2529 {
+    width: 821px !important; /* Жестко обрезаем ширину флага ровно по границе синего блока */
+    border-top-right-radius: 24px !important; /* Скругляем правый верхний угол (как у синего блока) */
+    border-bottom-right-radius: 24px !important; /* Скругляем правый нижний угол */
+    background-position: left center !important; /* Фиксируем фон, чтобы флаг не сместился из-за обрезки */
+}
+
+/* --- СТРЕЛКА ВНИЗ В КНОПКЕ "ПРИМЕРЫ ПРОЕКТОВ" --- */
+.node-5-2532 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Рисуем стрелочку кодом (теперь смотрит ВНИЗ) */
+.node-5-2532::after {
+    content: "" !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-top: 2px solid rgb(0, 86, 216) !important;
+    border-right: 2px solid rgb(0, 86, 216) !important;
+    /* Угол поворота 135 градусов делает стрелку-уголок вниз */
+    transform: rotate(135deg) !important; 
+    /* Корректируем положение, чтобы было идеально по центру */
+    margin-right: -2px !important; 
+    margin-top: -3px !important;
+}
+
+/* --- 1. ОТКРЫВАЕМ ОБРЕЗАННЫЕ ТЕКСТЫ --- */
+/* Текст под картинкой и текст рядом с синим кругом */
+.node-5-2598, .node-5-2946 {
+    height: auto !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    line-height: 1.4 !important;
+}
+
+/* --- 2. УБИРАЕМ КВАДРАТЫ В "ОБЪЕМ ПОСТАВКИ" --- */
+/* Оставляем только красивую линию снизу */
+.node-5-2606, .node-5-2611, .node-5-2616 {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgb(218, 218, 218) !important;
+    border-radius: 0 !important; /* Убираем скругления углов */
+}
+
+/* --- 3. ЦЕНТРИРУЕМ БЛОКИ ДЛЯ БУДУЩИХ ИКОНОК --- */
+/* Квадрат на фото и синий круг внизу */
+.node-5-2546, .node-5-2594 {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* --- 4. РИСУЕМ ГАЛОЧКИ И СТРЕЛОЧКИ КОДОМ --- */
+/* Сначала запрещаем браузеру прятать иконки за краями */
+.node-5-2640, .node-5-2653, .node-5-2646, .node-5-2659,
+.node-5-2674, .node-5-2680, .node-5-2686,
+.node-5-2701, .node-5-2707, .node-5-2713, .node-5-2719, .node-5-2725 {
+    overflow: visible !important;
+}
+
+/* Добавляем зеленые галочки в первый блок */
+.node-5-2640::before, .node-5-2653::before, .node-5-2646::before, .node-5-2659::before {
+    content: "✔";
+    color: #2EDC49;
+    position: absolute;
+    left: -22px; /* Выносим галочку влево от текста */
+    font-weight: 900;
+}
+
+/* Добавляем синие стрелочки в остальные блоки */
+.node-5-2674::before, .node-5-2680::before, .node-5-2686::before,
+.node-5-2701::before, .node-5-2707::before, .node-5-2713::before, .node-5-2719::before, .node-5-2725::before {
+    content: "❯";
+    color: rgb(0, 91, 226);
+    position: absolute;
+    left: -20px;
+    font-size: 16px;
+    line-height: 1.1;
+}
+/* --- ФИКС ОБРЕЗАННОГО ТЕКСТА "ПО ИТОГАМ ПРОЕКТА..." --- */
+.node-5-2596 {
+    height: auto !important; 
+    overflow: visible !important; 
+    white-space: normal !important; 
+    text-transform: uppercase !important; /* Делаем заглавными, как в макете */
+    line-height: 1.3 !important; /* Чтобы строчки не слипались */
+}
+
+/* Custom class to fix the БХК logo block in the Clients section */
+.fix-customer-logo {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50% !important; /* Принудительно делаем идеальный круг */
+    background-color: #FFFFFF !important; /* Устанавливаем белый фон, как у остальных */
+    border: 1px solid rgb(218, 218, 218) !important; /* Совпадаем с серой обводкой Башнефти */
+    overflow: hidden !important; /* Скрываем все, что может вылезти за пределы круга */
+}
+
+/* Убираем все внутренние коробки/границы внутри контейнера с логотипом */
+.fix-customer-logo div {
+    background: transparent !important; /* Убираем фон внутренней коробки */
+    border: none !important; /* Убираем внутренние границы */
+    box-shadow: none !important; /* Убираем тени */
+    width: 100% !important; /* Растягиваем внутреннюю коробку на полный размер */
+    height: 100% !important; /* Растягиваем внутреннюю коробку на полный размер */
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important; /* Сбрасываем абсолютное позиционирование внутренних блоков */
+    left: 0 !important;
+    top: 0 !important;
+}
+
+/* Позиционируем и задаем размер самой картинки логотипа */
+.fix-customer-logo img {
+    /* Переопределяем все предыдущие и инлайн-стили */
+    width: auto !important; 
+    height: auto !important;
+    max-width: 80% !important; /* Задаем хороший отступ от края круга */
+    max-height: 80% !important;
+    object-fit: contain !important; /* Сохраняем пропорции логотипа */
+    position: static !important; /* Ставим в флекс-лейаут */
+    margin: 0 !important; /* Убираем отступы */
+}
+
+/* --- УБИРАЕМ ДВОЙНУЮ КОРОБКУ У ЛОГОТИПА БХК --- */
+.node-5-2546 {
+    background: transparent !important; /* Убираем белый фон */
+    border: none !important; /* Убираем рамку */
+    box-shadow: none !important; /* Убираем тень */
+}
+
+/* Делаем так, чтобы картинка логотипа занимала 100% места и не плющилась */
+.node-5-2546 img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+}
+
+/* --- ДОБАВЛЯЕМ 4 СИНИЕ ИКОНКИ К ЗАГОЛОВКАМ --- */
+
+/* Делаем заголовки гибкими, чтобы иконка и текст стояли в один ряд */
+.node-5-2604, .node-5-2631, .node-5-2665, .node-5-2692 {
+    display: flex !important;
+    align-items: center !important; /* Выравниваем по вертикали по центру */
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* Создаем невидимый квадрат для иконок перед текстом */
+.node-5-2604::before, 
+.node-5-2631::before, 
+.node-5-2665::before, 
+.node-5-2692::before {
+    content: "" !important;
+    display: inline-block !important;
+    width: 24px !important;  /* Ширина иконки (если мелковато - сделай 28px) */
+    height: 24px !important; /* Высота иконки */
+    margin-right: 12px !important; /* Отступ от иконки до самого текста */
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    flex-shrink: 0 !important; /* Запрещаем иконке сплющиваться */
+}
+
+/* 1. Иконка для "Объем поставки" */
+.node-5-2604::before { 
+    background-image: url("icon-box.svg") !important; 
+}
+
+/* 2. Иконка для "Индивидуально по требованию" */
+.node-5-2631::before { 
+    background-image: url("icon-doc.svg") !important; 
+}
+
+/* 3. Иконка для "Инженерная часть проекта" */
+.node-5-2665::before { 
+    background-image: url("icon-gear.svg") !important; 
+}
+
+/* 4. Иконка для "Испытания и приемка" */
+.node-5-2692::before { 
+    background-image: url("icon-test.svg") !important; 
+}
